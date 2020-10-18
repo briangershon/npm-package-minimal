@@ -15,6 +15,7 @@ jobs:
         # Defaults to the user or organization that owns the workflow file
         scope: '@briangershon'
     - run: npm install
+    - run: npm run test-ci
     - run: npm publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
