@@ -4,6 +4,7 @@ Publish npm package to Github packages.
 
 ## How to use package
 
+    npm login --registry=https://npm.pkg.github.com
     npm install @briangershon/npm-package-minimal
 
     # create tryit.js
