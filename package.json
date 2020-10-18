@@ -1,5 +1,5 @@
 {
-  "name": "npm-package-minimal",
+  "name": "@briangershon/npm-package-minimal",
   "version": "1.0.0",
   "description": "Publish npm package to Github packages.",
   "main": "index.js",
