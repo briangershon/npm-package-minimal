@@ -15,12 +15,10 @@
   },
   "author": "Brian Gershon",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/briangershon/npm-package-minimal/issues"
-  },
-  "homepage": "https://github.com/briangershon/npm-package-minimal",
   "dependencies": {
-    "cool-ascii-faces": "^1.3.4",
+    "cool-ascii-faces": "^1.3.4"
+  },
+  "devDependencies": {
     "jest": "^26.5.3"
   }
 }

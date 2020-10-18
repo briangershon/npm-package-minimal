@@ -12,8 +12,6 @@ jobs:
       with:
         node-version: '12.x'
         registry-url: 'https://npm.pkg.github.com'
-        # Defaults to the user or organization that owns the workflow file
-        scope: '@briangershon'
     - run: npm install
     - run: npm run test-ci
     - run: npm publish
