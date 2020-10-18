@@ -1,0 +1,19 @@
+{
+  "name": "npm-package-minimal",
+  "version": "1.0.0",
+  "description": "Publish npm package to Github packages.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/briangershon/npm-package-minimal.git"
+  },
+  "author": "Brian Gershon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/briangershon/npm-package-minimal/issues"
+  },
+  "homepage": "https://github.com/briangershon/npm-package-minimal"
+}
