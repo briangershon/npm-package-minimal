@@ -18,7 +18,9 @@ Since this is not being published to the NPM registry, you need to tell `npm` ho
 
 ## To release new version of this package
 
+First update version, tag it and push to Github
+
     npm version patch -s -m "my release"
     # `postversion` hook will then push to Github
     
-    Create a release on Github.com to trigger publish action.
+Then create a release on Github.com to trigger publish action.

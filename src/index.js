@@ -1,3 +1,1 @@
-var cool = require('cool-ascii-faces');
-
-module.exports.helloWorld = () => `Hello World! ${cool()}`;
+module.exports.helloWorld = () => `Hello World!`;
