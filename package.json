@@ -1,7 +1,7 @@
 {
   "name": "@briangershon/npm-package-minimal",
   "version": "1.0.2",
-  "description": "Publish npm package to Github packages.",
+  "description": "Example of publishing an NPM module to Github package repository.",
   "main": "src/index.js",
   "scripts": {
     "test": "jest specs --watch",
