@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest specs --watch",
     "test-ci": "jest specs",
-    "preversion": "npm test",
+    "preversion": "npm run test-ci",
     "postversion": "git push && git push --follow-tags"
   },
   "repository": {
