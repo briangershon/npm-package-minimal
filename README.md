@@ -2,6 +2,14 @@
 
 Example of publishing an NPM package to Github Packages via Github Actions.
 
+Published as an ESM module, not as a CommonJS module.
+
+## Jest testing library now has ESM support
+
+Jest can support ESM but requires some extra options in `packages.json` as described in the accepted answer [here](https://stackoverflow.com/questions/60372790/node-v13-jest-es6-native-support-for-modules-without-babel-or-esm). These changes have been made in this package.
+
+Also, follow along here for future Jest updates about [Meta: Native support for ES Modules](https://github.com/facebook/jest/issues/9430).
+
 ## How to fork this repo for your own NPM module
 
 * This is a template, so you can clone the repo by clicking `Use this template` in Github.
@@ -18,9 +26,15 @@ Since this is not being published to the NPM registry, you need to tell `npm` ho
 
 ## To release new version of this package
 
-First update version, tag it and push to Github
+Commit your changes in a branch. Create PR.
+
+Merge your PR to `main`.
+
+`git pull` locally.
+
+Update version, tag it and push to Github via:
 
     npm version patch -s -m "my release"
     # `postversion` hook will then push to Github
-    
-Then create a release on Github.com to trigger publish action.
+
+Finally, create a release on Github.com to trigger publish action.
