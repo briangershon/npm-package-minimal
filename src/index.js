@@ -1,1 +1,5 @@
-module.exports.helloWorld = () => `Hello World!`;
+const helloWorld = () => `Hello World!`;
+
+export {
+  helloWorld,
+};

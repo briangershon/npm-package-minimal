@@ -2,6 +2,14 @@
 
 Example of publishing an NPM package to Github Packages via Github Actions.
 
+Published as an ESM module, not as a CommonJS module.
+
+## Jest testing library now has ESM support
+
+Jest can support ESM but requires some extra options in `packages.json` as described in the accepted answer [here](https://stackoverflow.com/questions/60372790/node-v13-jest-es6-native-support-for-modules-without-babel-or-esm). These changes have been made in this package.
+
+Also, follow along here for future Jest updates about [Meta: Native support for ES Modules](https://github.com/facebook/jest/issues/9430).
+
 ## How to fork this repo for your own NPM module
 
 * This is a template, so you can clone the repo by clicking `Use this template` in Github.
