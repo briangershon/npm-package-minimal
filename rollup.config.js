@@ -9,7 +9,7 @@ export default {
       format: 'cjs',
     },
     {
-      file: 'dist/bundle.esm.js',
+      file: 'dist/bundle.esm.mjs',
       format: 'esm',
     }
   ],

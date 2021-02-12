@@ -2,8 +2,14 @@
   "name": "@briangershon/npm-package-minimal",
   "version": "3.0.0",
   "description": "Example of publishing an NPM module to Github package repository.",
-  "main": "dist/bundle.cjs.js",
-  "module": "dist/bundle.esm.js",
+  "type": "commonjs",
+  "main": "./dist/bundle.esm.mjs",
+  "exports": {
+    ".": {
+      "require": "./dist/bundle.cjs.js",
+      "default": "./dist/bundle.esm.mjs"
+    }
+  },
   "types": "dist/index.d.ts",
   "engines": {
     "node": ">=14.x"
@@ -23,7 +29,6 @@
     "url": "https://github.com/briangershon/npm-package-minimal.git"
   },
   "author": "Brian Gershon",
-  "type": "module",
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
