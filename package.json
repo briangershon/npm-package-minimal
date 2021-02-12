@@ -2,10 +2,9 @@
   "name": "@briangershon/npm-package-minimal",
   "version": "2.0.0",
   "description": "Example of publishing an NPM module to Github package repository.",
-  "main": "./src/index.js",
-  "exports": {
-    ".": "./src/index.js"
-  },
+  "main": "dist/bundle.cjs.js",
+  "module": "dist/bundle.esm.js",
+  "types": "dist/index.d.ts",
   "engines": {
     "node": ">=14.x"
   },
@@ -13,8 +12,11 @@
     "test": "jest --watch",
     "test-ci": "jest",
     "coverage": "jest --coverage",
-    "preversion": "npm run test-ci",
-    "postversion": "git push && git push --follow-tags"
+    "preversion": "npm run test-ci && npm run coverage",
+    "postversion": "git push && git push --follow-tags",
+    "build": "npm run build:tsd && npm run rollup",
+    "build:tsd": "rm -rf dist && tsc src/index.ts --emitDeclarationOnly -d --outDir dist",
+    "rollup": "rollup -c"
   },
   "repository": {
     "type": "git",
@@ -27,6 +29,9 @@
   "devDependencies": {
     "@types/jest": "^26.0.20",
     "jest": "^26.6.3",
+    "rollup": "^2.38.5",
+    "rollup-plugin-cleanup": "^3.2.1",
+    "rollup-plugin-typescript2": "^0.29.0",
     "ts-jest": "^26.5.1",
     "typescript": "^4.1.5"
   },
