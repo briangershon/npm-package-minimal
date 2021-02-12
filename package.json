@@ -12,6 +12,7 @@
   "scripts": {
     "test": "jest --watch",
     "test-ci": "jest",
+    "coverage": "jest --coverage",
     "preversion": "npm run test-ci",
     "postversion": "git push && git push --follow-tags"
   },
@@ -30,11 +31,20 @@
     "typescript": "^4.1.5"
   },
   "jest": {
+    "verbose": true,
     "roots": [
       "<rootDir>/src/specs"
     ],
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
+    },
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 0
+      }
     }
   }
 }
