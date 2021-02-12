@@ -3,9 +3,10 @@
 Example of publishing an NPM package to Github Packages via Github Actions.
 
 Features:
-- Publish as ESM and CJS
+- Publish as both ESM and CJS modules via [hybrid approach targeting modern bundlers](https://2ality.com/2019/10/hybrid-npm-packages.html#option-4%3A-bare-import-esm%2C-deep-import-commonjs-with-.mjs-and-.cjs)
 - TypeScript support
 - Jest testing and coverage
+- Github Actions for testing and publishing package
 
 ## How to fork this repo for your own NPM module
 
