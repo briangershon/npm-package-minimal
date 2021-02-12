@@ -2,18 +2,21 @@
   "name": "@briangershon/npm-package-minimal",
   "version": "2.0.0",
   "description": "Example of publishing an NPM module to Github package repository.",
-  "main": "./src/index.js",
-  "exports": {
-    ".": "./src/index.js"
-  },
+  "main": "dist/bundle.cjs.js",
+  "module": "dist/bundle.esm.js",
+  "types": "dist/index.d.ts",
   "engines": {
-    "node": ">=12.17.0"
+    "node": ">=14.x"
   },
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js specs --watch",
-    "test-ci": "node --experimental-vm-modules node_modules/jest/bin/jest.js specs",
-    "preversion": "npm run test-ci",
-    "postversion": "git push && git push --follow-tags"
+    "test": "jest --watch",
+    "test-ci": "jest",
+    "coverage": "jest --coverage",
+    "preversion": "npm run test-ci && npm run coverage",
+    "postversion": "git push && git push --follow-tags",
+    "build": "npm run build:tsd && npm run rollup",
+    "build:tsd": "rm -rf dist && tsc src/index.ts --emitDeclarationOnly -d --outDir dist",
+    "rollup": "rollup -c"
   },
   "repository": {
     "type": "git",
@@ -21,15 +24,32 @@
   },
   "author": "Brian Gershon",
   "type": "module",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {},
   "devDependencies": {
+    "@types/jest": "^26.0.20",
     "jest": "^26.6.3",
-    "jest-environment-jsdom-sixteen": "^1.0.3",
-    "jest-environment-node": "^26.6.2"
+    "rollup": "^2.38.5",
+    "rollup-plugin-cleanup": "^3.2.1",
+    "rollup-plugin-typescript2": "^0.29.0",
+    "ts-jest": "^26.5.1",
+    "typescript": "^4.1.5"
   },
   "jest": {
-    "transform": {},
-    "testEnvironment": "jest-environment-jsdom-sixteen"
+    "verbose": true,
+    "roots": [
+      "<rootDir>/src/specs"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 0
+      }
+    }
   }
 }

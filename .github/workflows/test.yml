@@ -1,7 +1,6 @@
-name: Node.js Package
-on:
-  release:
-    types: [created]
+name: Run tests
+on: push
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -11,9 +10,6 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: '14.x'
-        registry-url: 'https://npm.pkg.github.com'
     - run: npm install
-    - run: npm run build
-    - run: npm publish
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - run: npm run test-ci
+    - run: npm run coverage
