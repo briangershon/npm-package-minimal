@@ -7,11 +7,11 @@
     ".": "./src/index.js"
   },
   "engines": {
-    "node": ">=12.17.0"
+    "node": ">=14.x"
   },
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js specs --watch",
-    "test-ci": "node --experimental-vm-modules node_modules/jest/bin/jest.js specs",
+    "test": "jest --watch",
+    "test-ci": "jest",
     "preversion": "npm run test-ci",
     "postversion": "git push && git push --follow-tags"
   },
@@ -21,15 +21,20 @@
   },
   "author": "Brian Gershon",
   "type": "module",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {},
   "devDependencies": {
+    "@types/jest": "^26.0.20",
     "jest": "^26.6.3",
-    "jest-environment-jsdom-sixteen": "^1.0.3",
-    "jest-environment-node": "^26.6.2"
+    "ts-jest": "^26.5.1",
+    "typescript": "^4.1.5"
   },
   "jest": {
-    "transform": {},
-    "testEnvironment": "jest-environment-jsdom-sixteen"
+    "roots": [
+      "<rootDir>/src/specs"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    }
   }
 }
