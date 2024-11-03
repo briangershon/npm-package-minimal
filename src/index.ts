@@ -1,5 +1,5 @@
-const helloWorld = () => `Hello World!`;
+import { helloString } from "@/mylib";
 
-export {
-  helloWorld,
-};
+const helloWorld = () => helloString;
+
+export { helloWorld };
