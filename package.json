@@ -1,28 +1,27 @@
 {
   "name": "@briangershon/npm-package-minimal",
-  "version": "3.0.1",
+  "private": true,
+  "version": "4.0.0",
+  "type": "module",
   "description": "Example of publishing an NPM module to Github package repository.",
-  "type": "commonjs",
-  "main": "./dist/bundle.esm.mjs",
+  "module": "./dist/index.es.js",
   "exports": {
     ".": {
-      "require": "./dist/bundle.cjs.js",
-      "default": "./dist/bundle.esm.mjs"
+      "import": "./dist/index.es.js"
     }
   },
-  "types": "dist/index.d.ts",
+  "types": "./types/index.d.ts",
   "engines": {
-    "node": ">=14.x"
+    "node": ">=20.x"
   },
   "scripts": {
-    "test": "jest --watch",
-    "test-ci": "jest",
-    "coverage": "jest --coverage",
     "preversion": "npm run test-ci && npm run coverage",
     "postversion": "git push && git push --follow-tags",
-    "build": "npm run build:tsd && npm run rollup",
-    "build:tsd": "rm -rf dist && tsc src/index.ts --emitDeclarationOnly -d --outDir dist",
-    "rollup": "rollup -c"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "coverage": "vitest --coverage"
   },
   "repository": {
     "type": "git",
@@ -30,31 +29,12 @@
   },
   "author": "Brian Gershon",
   "license": "MIT",
-  "dependencies": {},
   "devDependencies": {
-    "@types/jest": "^26.0.20",
-    "jest": "^26.6.3",
-    "rollup": "^2.38.5",
-    "rollup-plugin-cleanup": "^3.2.1",
-    "rollup-plugin-typescript2": "^0.29.0",
-    "ts-jest": "^26.5.1",
-    "typescript": "^4.1.5"
-  },
-  "jest": {
-    "verbose": true,
-    "roots": [
-      "<rootDir>/src/specs"
-    ],
-    "transform": {
-      "^.+\\.tsx?$": "ts-jest"
-    },
-    "coverageThreshold": {
-      "global": {
-        "branches": 100,
-        "functions": 100,
-        "lines": 100,
-        "statements": 0
-      }
-    }
+    "@types/node": "^22.8.6",
+    "typescript": "~5.6.2",
+    "vite": "^5.4.10",
+    "vite-plugin-dts": "^4.3.0",
+    "@vitest/coverage-v8": "^2.1.4",
+    "vitest": "^2.1.4"
   }
 }
