@@ -1,8 +1,7 @@
 {
   "name": "@briangershon/npm-package-minimal",
-  "version": "4.1.0",
-  "type": "module",
   "description": "Example of publishing an NPM module to Github package repository.",
+  "version": "4.1.0",
   "module": "./dist/index.es.js",
   "main": "./dist/index.es.js",
   "exports": {
@@ -12,6 +11,7 @@
     }
   },
   "types": "./dist/index.d.ts",
+  "type": "module",
   "engines": {
     "node": ">=20.x"
   },
