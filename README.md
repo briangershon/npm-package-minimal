@@ -24,6 +24,7 @@ Then make the following changes:
   - reset your `version` to an initial value such as `0.0.1` or `1.0.0`.
 - update `LICENSE` file with your own name or license.
 - update `README.md` with your own content.
+- optional update `.prettierrc.json` or `eslint.config.js` with your own settings.
 
 ## How to `npm install` this package in your own application
 

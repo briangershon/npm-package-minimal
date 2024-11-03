@@ -1,5 +1,5 @@
-const helloWorld = () => `Hello World!`;
+import { helloString } from '@/mylib'; // example of importing with @ alias
 
-export {
-  helloWorld,
-};
+const helloWorld = () => helloString;
+
+export { helloWorld };

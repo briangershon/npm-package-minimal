@@ -3,3 +3,5 @@ src
 .nvmrc
 tsconfig.json
 vite.config.ts
+.prettierrc.json
+.eslint.config.js
