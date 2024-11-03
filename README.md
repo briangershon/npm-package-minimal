@@ -21,8 +21,8 @@ Then make the following changes:
 
 - in `package.json`:
   - update all the `@briangershon` to your account name
-  - replace `npm-package-minimal` with the name of your repo. The `name` field is particularly important since this is needed for publishing your module.
-  - reset your `version` to an initial value such as `0.0.1` or `1.0.0`.
+  - replace `npm-package-minimal` with the name of your repo. The `name` field is particularly important since this is needed for publishing your module. Name should have the format `@your-github-username/your-repo-name`.
+  - reset your `version` to an initial value `0.0.0`. Note: You'll update this version when publishing package.
 - update `LICENSE` file with your own name or license.
 - update `README.md` with your own content.
 - optional update `.prettierrc.json` or `eslint.config.js` with your own settings.
@@ -43,6 +43,24 @@ In your project, install this package like so:
 
 ```bash
 npm install @briangershon/npm-package-minimal
+```
+
+## Run tests while developing this package
+
+```bash
+npm run test:watch
+```
+
+or without watch:
+
+```bash
+npm test
+```
+
+## Run while developing
+
+```bash
+npm run build:watch
 ```
 
 ## To release new version of this package

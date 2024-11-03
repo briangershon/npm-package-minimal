@@ -4,20 +4,24 @@
   "type": "module",
   "description": "Example of publishing an NPM module to Github package repository.",
   "module": "./dist/index.es.js",
+  "main": "./dist/index.es.js",
   "exports": {
     ".": {
-      "import": "./dist/index.es.js"
+      "import": "./dist/index.es.js",
+      "types": "./dist/index.d.ts"
     }
   },
-  "types": "./types/index.d.ts",
+  "types": "./dist/index.d.ts",
   "engines": {
     "node": ">=20.x"
   },
   "scripts": {
     "preversion": "npm run test && npm run lint",
     "postversion": "git push && git push --follow-tags",
-    "build": "tsc && vite build",
+    "build": "vite build",
+    "build:watch": "vite build --watch",
     "test": "vitest run",
+    "test:watch": "vitest",
     "coverage": "vitest --coverage",
     "format": "prettier --write src",
     "lint": "eslint src"
