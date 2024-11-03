@@ -1,8 +1,8 @@
-import { describe, expect, test } from "vitest";
-import { helloWorld } from "./index";
+import { describe, expect, test } from 'vitest';
+import { helloWorld } from './index';
 
-describe("index", () => {
-  test("has default message", async () => {
-    expect(helloWorld()).toEqual("Hello World!");
+describe('index', () => {
+  test('has default message', async () => {
+    expect(helloWorld()).toEqual('Hello World!');
   });
 });

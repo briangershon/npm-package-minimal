@@ -1,4 +1,4 @@
-import { helloString } from "@/mylib";
+import { helloString } from '@/mylib';
 
 const helloWorld = () => helloString;
 
