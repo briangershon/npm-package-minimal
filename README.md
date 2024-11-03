@@ -2,6 +2,8 @@
 
 Example of publishing an NPM package to Github Packages via Github Actions.
 
+This is useful for developing private packages you use internally and don't want to publish to the public NPM registry.
+
 Features:
 
 - Vite tooling
@@ -10,19 +12,36 @@ Features:
 - Publish as ESM
 - Github Actions for testing and publishing package
 
-## How to fork this repo for your own NPM module
+## How to clone this repo for your own NPM module
 
-- This is a template, so you can clone the repo by clicking `Use this template` in Github.
-- Change `package.json` and update all the `@briangershon` to your account name and replace `npm-package-minimal` with the name of your repo. The `name` field (in `package.json`) is particularly important since this is needed for publishing your module. Also reset your `version` to an initial value such as `0.0.1` or `1.0.0`.
+This is a template, so you can clone the repo by clicking `Use this template` in Github.
+
+Then make the following changes:
+
+- in `package.json`:
+  - update all the `@briangershon` to your account name
+  - replace `npm-package-minimal` with the name of your repo. The `name` field is particularly important since this is needed for publishing your module.
+  - reset your `version` to an initial value such as `0.0.1` or `1.0.0`.
+- update `LICENSE` file with your own name or license.
+- update `README.md` with your own content.
 
 ## How to `npm install` this package in your own application
 
-Since this module is not being published to the NPM registry, you need to tell `npm` how to access the package on Github Package Registry.
+Since this module is being deployed to the GitHub package repository (instead of the default NPM registry), you need to tell `npm` how to find the package.
 
-    # create your own personal github token with `repo` and `read:packages` scopes
-    # and use it as your password in the next step:
-    npm login --registry=https://npm.pkg.github.com --scope=@briangershon
-    npm install @briangershon/npm-package-minimal
+First create your own personal github token with `repo` and `read:packages` scopes, which you'll use as your password in the next step.
+
+Use your own `--scope` value instead of `@briangershon`.
+
+```bash
+npm login --registry=https://npm.pkg.github.com --scope=@briangershon
+```
+
+In your project, install this package like so:
+
+```bash
+npm install @briangershon/npm-package-minimal
+```
 
 ## To release new version of this package
 
