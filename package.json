@@ -17,9 +17,7 @@
   "scripts": {
     "preversion": "npm run test-ci && npm run coverage",
     "postversion": "git push && git push --follow-tags",
-    "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview",
     "test": "vitest",
     "coverage": "vitest --coverage"
   },
