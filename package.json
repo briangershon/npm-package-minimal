@@ -1,7 +1,6 @@
 {
   "name": "@briangershon/npm-package-minimal",
-  "private": true,
-  "version": "4.0.0",
+  "version": "3.0.1",
   "type": "module",
   "description": "Example of publishing an NPM module to Github package repository.",
   "module": "./dist/index.es.js",
@@ -15,10 +14,10 @@
     "node": ">=20.x"
   },
   "scripts": {
-    "preversion": "npm run test && npm run coverage",
+    "preversion": "npm run test",
     "postversion": "git push && git push --follow-tags",
     "build": "tsc && vite build",
-    "test": "vitest",
+    "test": "vitest run",
     "coverage": "vitest --coverage"
   },
   "repository": {
