@@ -11,6 +11,7 @@ Features:
 - TypeScript
 - Publish as ESM
 - Github Actions for testing and publishing package
+- eslint and prettier for code formatting
 
 ## How to clone this repo for your own NPM module
 
