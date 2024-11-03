@@ -26,14 +26,8 @@ Since this module is not being published to the NPM registry, you need to tell `
 
 ## To release new version of this package
 
-Commit your changes in a branch. Create PR.
-
-Merge your PR to `main`.
-
-`git pull` locally.
-
-Update package version, which then tags it and pushes to GitHub:
-
-    npm version patch -s -m "my release"
-
-Finally, create a release on Github.com to trigger publish action.
+- create a PR for your branch
+- merge your PR to `main`
+- on your local machine, run `git pull` to bring down latest `main` changes
+- run `npm version patch -s -m "my release"` to bump the version number (`patch` can be replaced with `minor` or `major` versions), tag it, and push it to GitHub
+- publish package on GitHub package registry by creating a Release on github.com to trigger publish action
