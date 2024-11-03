@@ -32,9 +32,8 @@ Merge your PR to `main`.
 
 `git pull` locally.
 
-Update version, tag it and push to Github via:
+Update package version, which then tags it and pushes to GitHub:
 
     npm version patch -s -m "my release"
-    # `postversion` hook will then push to Github
 
 Finally, create a release on Github.com to trigger publish action.
