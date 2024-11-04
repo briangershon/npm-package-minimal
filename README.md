@@ -65,6 +65,7 @@ npm run build:watch
 
 ## To release new version of this package
 
+- for first time run, ensure your repo's GitHub Actions have the correct permissions to publish a package. Go to repo's `Settings > Actions > General > Workflow Permissions` and choose `Read and Write Permissions`.
 - create a PR for your branch
 - merge your PR to `main`
 - on your local machine, run `git pull` to bring down latest `main` changes
